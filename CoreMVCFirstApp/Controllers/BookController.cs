@@ -12,6 +12,14 @@ namespace CoreMVCFirstApp.Controllers
         {
             bookRepository= new BookRepository();
         }
+        public ViewResult Index()
+        {
+            return View();
+        }
+        public ViewResult AboutUs()
+        {
+            return View();
+        }
         public List<BookModel> GetAllBooks()
         {
             return bookRepository.GetAllBooks();
