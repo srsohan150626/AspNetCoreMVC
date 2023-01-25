@@ -20,9 +20,11 @@ namespace CoreMVCFirstApp.Controllers
         {
             return View();
         }
-        public List<BookModel> GetAllBooks()
+        public ViewResult GetAllBooks()
         {
-            return bookRepository.GetAllBooks();
+            var booklist =  bookRepository.GetAllBooks();
+            return View(booklist);
+
         }
         public BookModel GetBook(int id)
         {

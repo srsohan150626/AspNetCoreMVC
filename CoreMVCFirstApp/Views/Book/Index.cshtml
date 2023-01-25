@@ -1,25 +1,63 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "_Layout";
 }
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1>Welcome to Bookstore</h1>
+        <p class="lead text-muted">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+        <p>
+            <a href="#" class="btn btn-primary my-2">Search books</a>
+        </p>
+    </div>
+</section>
+<div class="bg-light">
+    <div class="container">
+        <h3 class="h3">Top Books</h3>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text">Author: </p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-outline-info btn-sm">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-text">Author: </p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-outline-info btn-sm">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        <p class="card-text">Author: </p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-outline-info btn-sm">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <h1>Welcome to Book Store Application</h1>
-    <h3>@DateTime.Now.ToString("dd-M-yyyy")</h3>
-    @{
-        int a = 10;
-        int b = 20;
-        int c = a + b;
-    }
-    <h4>Sum = @c</h4>
-    <p>Email - sohan@gmail.com</p>
-    <p>Twitter - @@sohan</p>
-</body>
-</html>

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<BookModel>
+@{
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <h3 class="h3">All Books</h3>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+       @foreach(var book in Model)
+        {
+             <div class="col">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                   <div class="card-body">
+                <h5 class="card-title">@book.Title</h5>
+                        <p class="card-text">@book.Description</p>
+                        <p class="card-text">Author: @book.Author</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-outline-info btn-sm">View Details</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+ </div>
+        
