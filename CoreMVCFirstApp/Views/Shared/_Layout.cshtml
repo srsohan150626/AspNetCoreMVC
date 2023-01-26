@@ -23,7 +23,7 @@
                             <a class="nav-link active" aria-current="page" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/book/aboutus">About</a>
+                            <a class="nav-link" href="/home/aboutus">About</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/book/getallbooks">All Books</a>
@@ -39,6 +39,7 @@
         </nav>
     </header>
     <div class="container">
+        @RenderSection("breadcrumb", required:false)
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
