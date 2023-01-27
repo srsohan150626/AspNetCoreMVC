@@ -7,14 +7,14 @@ namespace CoreMVCFirstApp.Controllers
 {
     public class HomeController : Controller
     {
+        [ViewData]
+        public string Title { get; set; }
         public ViewResult Index()
         {
-            ViewBag.Title = "srsohan150626";
-            dynamic data = new ExpandoObject();
-            data.Id = 1;
-            data.Name = "Dynamic";
-            ViewBag.Data = data;
-            return View();
+            ViewData["Property"] = "srsohan";
+            ViewData["data"] = new BookModel() { Id=45, Author="sohan" };
+            Title = "Home Page Controller";
+            return View(); 
         }
         public ViewResult AboutUs()
         {
