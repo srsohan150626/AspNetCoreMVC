@@ -20,13 +20,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                            <a class="nav-link active" aria-current="page" asp-controller="home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/home/aboutus">About</a>
+                            <a class="nav-link" asp-controller="home" asp-action="AboutUs">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/book/getallbooks">All Books</a>
+                            <a class="nav-link" asp-controller="book" asp-action="GetAllBooks">All Books</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="book" asp-action="AddBook">Add new Books</a>
                         </li>
                      
                     </ul>

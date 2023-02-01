@@ -1,3 +1,9 @@
+using CoreMVCFirstApp.Data;
+using CoreMVCFirstApp.Repository;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
+using System.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +11,11 @@ builder.Services.AddControllersWithViews();
 #if DEBUG
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 #endif
+// Add Entity Framework Core and SQL Server database connection.
+builder.Services.AddDbContext<BookStoreContext>(options =>
+    options.UseSqlServer("Server=.;Database=BookStore;Integrated Security=True"));
+
+builder.Services.AddScoped<BookRepository, BookRepository>();
 
 var app = builder.Build();
 

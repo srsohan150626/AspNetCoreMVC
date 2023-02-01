@@ -6,27 +6,47 @@ namespace CoreMVCFirstApp.Controllers
 {
     public class BookController : Controller
     {
-        private readonly BookRepository bookRepository = null;
-
-        public BookController() 
+        private readonly BookRepository _bookRepository = null;
+        [ViewData]
+        public string Title { get; set; }
+        public BookController(BookRepository bookRepository)
         {
-            bookRepository= new BookRepository();
+            _bookRepository = bookRepository;
         }
-      
-        public ViewResult GetAllBooks()
+
+        public async Task<IActionResult> GetAllBooks()
         {
-            var booklist =  bookRepository.GetAllBooks();
+            Title = "All Books";
+            var booklist = await _bookRepository.GetAllBooks();
             return View(booklist);
 
         }
-        public ViewResult GetBook(int id)
+        public async Task<IActionResult> GetBook(int id)
         {
-            var book = bookRepository.GetBook(id);
+            var book = await _bookRepository.GetBook(id);
+            Title = "Book Details " + book.Title;
             return View(book);
+        }
+
+        public ViewResult AddBook(bool isSuccess=false, int bookId=0)
+        {
+            ViewBag.IsSuccess = isSuccess;
+            ViewBag.BookId = bookId;
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddBook(BookModel bookModel)
+        {
+            int id = await _bookRepository.AddNewBook(bookModel);
+            if (id > 0)
+            {
+                return RedirectToAction(nameof(AddBook), new { isSuccess = true, bookId= id });
+            }
+            return View();
         }
         public List<BookModel> SearchBooks(string bookName, string authorName)
         {
-            return bookRepository.SearchBooks(bookName, authorName);
+            return _bookRepository.SearchBooks(bookName, authorName);
         }
     }
 }

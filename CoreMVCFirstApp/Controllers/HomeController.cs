@@ -11,13 +11,12 @@ namespace CoreMVCFirstApp.Controllers
         public string Title { get; set; }
         public ViewResult Index()
         {
-            ViewData["Property"] = "srsohan";
-            ViewData["data"] = new BookModel() { Id=45, Author="sohan" };
-            Title = "Home Page Controller";
+            Title = "Home Page";
             return View(); 
         }
         public ViewResult AboutUs()
         {
+            Title = "About US";
             return View();
         }
 
