@@ -43,7 +43,7 @@ namespace CoreMVCFirstApp.Repository
                 Description= bookModel.Description,
                 Category = "Technology",
                 Language = "English",
-                TotalPage = bookModel.TotalPage,
+                TotalPage = bookModel.TotalPage.HasValue ? bookModel.TotalPage.Value:0,
                 CreatedOn = DateTime.Now,
                 UpdatedOn= DateTime.Now
             };

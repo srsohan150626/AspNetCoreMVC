@@ -13,7 +13,7 @@ builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 #endif
 // Add Entity Framework Core and SQL Server database connection.
 builder.Services.AddDbContext<BookStoreContext>(options =>
-    options.UseSqlServer("Server=.;Database=BookStore;Integrated Security=True"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<BookRepository, BookRepository>();
 
