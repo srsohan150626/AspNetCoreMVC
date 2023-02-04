@@ -16,6 +16,7 @@
     </div>
     }
     <form method="post">
+        <div asp-validation-summary="All"></div>
         <div class="form-group">
             <label asp-for="Title"></label>
             <input asp-for="Title" class="form-control" />
@@ -30,6 +31,23 @@
             <label asp-for="Description"></label>
             <textarea asp-for="Description" class="form-control"></textarea>
             <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Language"></label>
+            <select asp-for="Language" class="form-control" asp-items="ViewBag.Languages">
+               <option value="">Please chhose your book language</option>
+            </select>
+            <span asp-validation-for="Language" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Category"></label>
+            <select asp-for="Category" class="form-control">
+                <option value="">Please choose your book category</option>
+                <option>Programming</option>
+                <option>Database</option>
+                <option>Framework</option>
+            </select>
+            <span asp-validation-for="Language" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="TotalPage"></label>

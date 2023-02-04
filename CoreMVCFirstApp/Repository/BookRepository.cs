@@ -41,8 +41,8 @@ namespace CoreMVCFirstApp.Repository
                 Author= bookModel.Author,
                 Title= bookModel.Title,
                 Description= bookModel.Description,
-                Category = "Technology",
-                Language = "English",
+                Category = bookModel.Category,
+                Language = bookModel.Language,
                 TotalPage = bookModel.TotalPage.HasValue ? bookModel.TotalPage.Value:0,
                 CreatedOn = DateTime.Now,
                 UpdatedOn= DateTime.Now

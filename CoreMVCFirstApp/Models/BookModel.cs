@@ -15,6 +15,7 @@ namespace CoreMVCFirstApp.Models
         [Required]
         public string Description { get; set; }
         public string Category { get; set; }
+        [Required(ErrorMessage = "Please select your book language!")]
         public string Language { get; set; }
         [Required(ErrorMessage = "Enter valid page number of your book.")]
         [Display(Name = "Total page of your book")]
