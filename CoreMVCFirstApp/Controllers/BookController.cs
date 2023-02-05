@@ -57,11 +57,13 @@ namespace CoreMVCFirstApp.Controllers
                     return RedirectToAction(nameof(AddBook), new { isSuccess = true, bookId = id });
                 }
             }
-            ViewBag.Languages = getLanguages().Select(x => new SelectListItem()
+            ViewBag.Languages = new List<SelectListItem>()
             {
-                Text = x.Name,
-                Value = x.Id.ToString()
-            }).ToList();
+                new SelectListItem(){Text = "English", Value="1"},
+                new SelectListItem(){Text = "Bangla", Value="2", Selected=true },
+                new SelectListItem(){Text = "Arabic", Value="3"},
+                new SelectListItem(){Text = "Spanish", Value="4"},
+            };
             return View();
         }
         public List<BookModel> SearchBooks(string bookName, string authorName)
