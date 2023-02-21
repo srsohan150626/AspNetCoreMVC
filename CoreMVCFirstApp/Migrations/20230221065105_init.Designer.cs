@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CoreMVCFirstApp.Migrations
 {
     [DbContext(typeof(BookStoreContext))]
-    [Migration("20230201040048_addedtwocolumns")]
-    partial class addedtwocolumns
+    [Migration("20230221065105_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
